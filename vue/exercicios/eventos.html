@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div class="" id="app">
+        <p class="alert" v-if="alert">Contador chegou ao limite</p>
+        <p class="cont">
+            <p class="result">{{contador}}</p>
+            <button @click="add">Add</button>
+            <button @click="remove">Remove</button>
+        </p>
+        <p class="inputs">
+            <input type="text" @keyup.enter="alerta">
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                alert: false
+            },
+
+            methods: {
+                add () {
+                    if (this.contador < 10) this.contador++
+                },
+
+                remove () {
+                    if (this.contador > 0) this.contador--
+                },
+
+                alerta () {
+                    alert('Evento disparado com um ENTER.')
+                }
+            },
+
+            watch: {
+                contador (valor) {
+                    return valor === 10 ? this.alert = true : this.alert = false
+                }
+            }
+        })
+    </script>
+</body>
+</html>

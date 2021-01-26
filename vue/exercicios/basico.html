@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conceitos Básicos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <p class="title">{{ nome.toUpperCase() }}</p>
+        <p class="title">Preço: R$ {{ preco }} - Desconto {{ precoComDesconto }}%</p>
+        <p class="title">Data: {{dataAtual()}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data : {
+                nome: 'Curso de Vue.js',
+                preco: '100',
+                desconto: 0.25
+            },
+
+            methods: {
+                dataAtual () {
+                    return new Date().toLocaleString()
+                }
+            },
+
+            computed: {
+                precoComDesconto () {
+                    return this.preco * this.desconto
+                }
+            }
+        })
+    </script>
+</body>
+</html>
