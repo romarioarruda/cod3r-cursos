@@ -1,0 +1,1 @@
+UPDATE estados SET nome = 'Amazonas' WHERE sigla = 'AM';

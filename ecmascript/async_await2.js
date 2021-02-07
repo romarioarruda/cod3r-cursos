@@ -1,5 +1,3 @@
-const { parse } = require("path")
-
 function testeAsyncAwait(timer) {
     return new Promise((resolve, reject) => {
         if (parseInt(timer)) {
