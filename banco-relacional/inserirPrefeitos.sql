@@ -1,0 +1,1 @@
+INSERT INTO prefeitos (nome, cidade_id) VALUES ('Rodrigo Neves', 32);
