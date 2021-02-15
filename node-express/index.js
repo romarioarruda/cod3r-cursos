@@ -1,6 +1,10 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+const moduloTeste = require('./api/moduloTeste')
 
 const app = express()
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 app.get('/', (req, resp) => {
@@ -19,6 +23,14 @@ app.get('/user/:id', (req, resp) => {
 app.get('/user/:id/relatorio', (req, resp) => {
     resp.send(`Relatório ${req.query.completo} do usuário ${req.params.id} no ano ${req.query.ano}`)
 })
+
+app.post('/post', (req, resp) => {
+    resp.send(req.body)
+})
+
+app.get('/getUser', moduloTeste.getUsuario)
+
+app.post('/saveUser', moduloTeste.salveUsuario)
 
 const port = 3000
 app.listen(port, () => {
