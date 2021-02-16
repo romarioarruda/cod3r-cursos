@@ -1,0 +1,16 @@
+-- Inserindo dados numa collection --
+
+db.nomecollection.insert({
+    nomeDoCampo: "valor do campo",
+    nomeDoCampo2: "valor do campo 2",
+    nomeDoCampo3: "valor do campo 3",
+})
+
+
+-- salvando dados que já existem ou não numa collection --
+
+db.nomecollection.save({
+    nomeDoCampo: "valor do campo",
+    nomeDoCampo2: "valor do campo 2",
+    nomeDoCampo3: "valor do campo 3",
+})

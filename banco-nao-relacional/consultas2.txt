@@ -1,0 +1,16 @@
+-- consulta agregada 1 --
+
+db.estados.aggregate([
+    { $project: {nome: 1, "cidades.nome": 1, _id: 0} }
+])
+
+-- tbm funciona como consulta agregada --
+
+db.estados.find({}, {nome: 1, "cidades.nome": 1, _id: 0})
+
+-- consulta agregada com soma --
+
+db.estados.aggregate([
+    { $project: {populacao: {$sum: "$cidades.populacao"}, nome: 1, regiao: 1, _id: 0} },
+    { $group: {_id: null, populacaoSudeste: {$sum: "$populacao"}} }
+])

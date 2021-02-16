@@ -1,0 +1,9 @@
+-- atualizando dados com valores qua ainda não existem no documento --
+
+db.estados.update({sigla: "AL"}, {$set: {regiao: "Nordeste"}})
+
+db.estados.update({_id: ObjectId("id")}, {$set: {populacao: 123456}})
+
+-- atualizando dados inserindo novos regsitros em valores que já existem no documento --
+
+db.estados.update({_id: ObjectId("602ade33e6a56012a25f065d")}, {$push: {cidade: "Satubinha"}})

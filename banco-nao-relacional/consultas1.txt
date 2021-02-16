@@ -1,0 +1,26 @@
+-- Selecionando dados de uma collection --
+
+db.nomecollection.find()
+
+-- Selecionando dados de uma collection aplicando um filtro --
+
+db.nomecollection.find({chave: "valor"})
+
+db.nomecollection.find({populacao: {$exists: true}})
+
+-- Selecionando um único dado de uma collection --
+
+db.nomecollection.findOne()
+
+-- Selecionando um único dado de uma collection com um filtro --
+
+db.nomecollection.findOne({chave: "valor"})
+
+
+-- Selecionando um único dado de uma collection e melhorando a visualização do documento --
+
+db.nomecollection.find().pretty()
+
+-- Aplicando uma paginação nos resultados
+
+db.nomecollection.find().skip(numeroDoFiltro).pretty()

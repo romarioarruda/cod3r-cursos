@@ -1,0 +1,18 @@
+-- Pra ativar o servidor do mongo --
+
+command: sudo mongod --dbpath=/user/data/db
+
+-- Pra acessar o mongo --
+
+Command: mongo
+
+-- Listando base de dados --
+
+show dbs
+
+-- Listando collections --
+show tables
+
+-- Acessando uma collection --
+
+use nome_collection

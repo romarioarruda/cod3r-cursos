@@ -1,0 +1,7 @@
+-- selecionando dados e filtrando com um pipeline de agregacao --
+
+db.estados.aggregate([
+    { $match: {"cidades.nome": "Sorocaba"} },
+    { $unwind: "$cidades" },
+    { $match: {"cidades.nome": "Sorocaba"} }
+]).pretty()

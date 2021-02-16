@@ -1,0 +1,11 @@
+-- removendo um documento da collection --
+
+db.estados.remove({_id: ObjectId("602c0372a8de42e9db2e87f3")})
+
+-- Removendo um documento com populacao menor que 123456 --
+
+db.estados.remove({populacao: {$lt: 123456}})
+
+-- Removendo um documento que não possui a chave populacao --
+
+db.estados.remove({populacao:{$exists: false}})
